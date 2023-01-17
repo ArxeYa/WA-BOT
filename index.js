@@ -18,8 +18,6 @@ const fetch = require('node-fetch')
 const tiktod = require('tiktok-scraper')
 const ffmpeg = require('fluent-ffmpeg')
 const { removeBackgroundFromImageFile } = require('remove.bg')
-const lolis = require('lolis.life')
-const loli = new lolis()
 const welkom = JSON.parse(fs.readFileSync('./src/welkom.json'))
 const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
@@ -100,7 +98,7 @@ async function starts() {
       mek = JSON.parse(JSON.stringify(mek)).messages[0]
       if (!mek.message) return
       if (mek.key && mek.key.remoteJid == 'status@broadcast') return
-      if (mek.key.fromMe) return
+      if (!mek.key.fromMe) return
       global.prefix
       global.blocked
       const content = JSON.stringify(mek.message)
@@ -133,7 +131,7 @@ async function starts() {
       }
 
       const botNumber = client.user.jid
-      const ownerNumber = ["94xxxxxxxx@s.whatsapp.net"] // replace this with your number
+      const ownerNumber = ["62xxxxxxxxxx@s.whatsapp.net"] // replace this with your number
       const isGroup = from.endsWith('@g.us')
       const sender = isGroup ? mek.participant : mek.key.remoteJid
       const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
