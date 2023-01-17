@@ -1,8 +1,7 @@
 const help = (prefix) => {
 	return `🤡 HELLO GUYS ! 🤡
-	👻 I'm A BASIC WHATSAPP BOT REDEVELOPED BY DEVL MASTER 👻
 	
-❤  > User Commands < ❤
+  > User Commands < 
 	
 !sticker -  convert image/gif/video to sticker (reply to image/video)
 
@@ -20,7 +19,7 @@ const help = (prefix) => {
 
 
 
-💚 > Group Comands < 💚
+ > Group Comands < 
 
 !add -  add member into group
 
